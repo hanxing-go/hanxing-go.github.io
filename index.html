@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Hanxing Study Hub</title>
-  <meta name="description" content="一个记录学习打卡、路线进度与成长轨迹的个人学习网站。">
-  <meta name="keywords" content="学习打卡, 个人博客, GitHub, 学习路线, 成长记录">
+  <title>Hanxing · Java Backend & Agent</title>
+  <meta name="description" content="Hanxing 的个人主页：研一在读，聚焦 Java 后端、Agent 应用、项目作品与学习成长记录。">
+  <meta name="keywords" content="Hanxing, Java后端, Agent, Spring, Docker, MySQL, GitHub, 个人主页, 项目索引">
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body>
@@ -14,14 +14,18 @@
     <div id="zx-loading-center"></div>
   </div>
 
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
   <div class="page-shell">
     <aside class="sidebar glass-card">
       <div class="profile-block">
         <div class="avatar-wrap">
           <div class="avatar" style="background-image: url('./static/img/logo.jpg');"></div>
         </div>
-        <h1>Hanxing Study Hub</h1>
-        <p>把学习变成能看见的积累，把博客变成成长的注脚。</p>
+        <div class="status-badge">研一 · Java 后端 / Agent 方向</div>
+        <h1>Hanxing</h1>
+        <p>把学习、项目和输出沉淀成能被看见的成长轨迹。</p>
       </div>
 
       <div class="sidebar-section">
@@ -37,12 +41,13 @@
       <div class="sidebar-section">
         <div class="sidebar-title">导航</div>
         <nav class="side-nav">
-          <a href="#dashboard">Dashboard</a>
-          <a href="#calendar">日历页</a>
-          <a href="#checkin">每日打卡</a>
+          <a href="#dashboard">首页</a>
+          <a href="#profile">个人简介</a>
+          <a href="#github">GitHub 热力图</a>
+          <a href="#projects">项目索引</a>
+          <a href="#skills">技能展示</a>
+          <a href="#calendar">学习日历</a>
           <a href="#roadmap">学习路线</a>
-          <a href="#blog">博客预留</a>
-          <a href="#about">About</a>
         </nav>
       </div>
     </aside>
@@ -50,14 +55,14 @@
     <main class="main-content">
       <section class="hero glass-card" id="dashboard">
         <div class="hero-text">
-          <div class="eyebrow">Study Tracker · Dashboard</div>
-          <h2>今天也在为更好的自己打卡</h2>
+          <div class="eyebrow">Personal Hub · Java Backend · Agent</div>
+          <h2>你好，我是 Hanxing。正在把热爱写进代码里。</h2>
           <p>
-            第一版先聚焦学习记录、路线推进和 GitHub 活跃概览，后面再平滑演进成你的个人博客与作品站。
+            研一在读，当前聚焦 Java 后端开发与 Agent 应用方向。这个站点参考 astro-koharu 的卡片化信息组织方式，整合个人简介、GitHub 活跃、项目索引、技能栈和长期学习路线。
           </p>
           <div class="hero-actions">
-            <a href="#checkin" class="primary-btn">开始今日打卡</a>
-            <a href="#roadmap" class="secondary-btn">查看学习路线</a>
+            <a href="https://github.com/hanxing-go" target="_blank" rel="noreferrer" class="primary-btn">GitHub 主页</a>
+            <a href="#projects" class="secondary-btn">查看项目</a>
           </div>
         </div>
         <div class="hero-panel">
@@ -65,6 +70,37 @@
           <div class="hero-panel-main" id="todayStatusText"></div>
           <div class="hero-panel-sub" id="todaySummaryText"></div>
         </div>
+      </section>
+
+      <section class="profile-grid" id="profile">
+        <article class="panel glass-card intro-card">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">About Me</div>
+              <h3>个人简介</h3>
+            </div>
+          </div>
+          <div class="about-copy">
+            <p>我是一名研一学生，正在系统补齐 Java 后端工程能力，同时探索 Agent、自动化工作流和 AI 应用落地。</p>
+            <p>长期目标是一年后找到实习：用稳定的后端基础、可展示的项目作品和持续输出证明自己的成长速度。</p>
+            <p>这个主页既是作品集入口，也是学习仪表盘：记录每天的推进、路线完成度、项目沉淀和 GitHub 活跃。</p>
+          </div>
+        </article>
+
+        <article class="panel glass-card now-card">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Now</div>
+              <h3>当前状态</h3>
+            </div>
+          </div>
+          <div class="now-list">
+            <div><strong>身份</strong><span>研一在读</span></div>
+            <div><strong>方向</strong><span>Java 后端 + Agent 应用</span></div>
+            <div><strong>目标</strong><span>实习、项目、技术博客、GitHub 作品集</span></div>
+            <div><strong>节奏</strong><span>每天 19:00 开始学习，目标 2-4 小时</span></div>
+          </div>
+        </article>
       </section>
 
       <section class="stats-grid">
@@ -101,24 +137,75 @@
           <div id="roadmapOverviewList" class="roadmap-overview-list"></div>
         </article>
 
-        <article class="panel glass-card github-panel">
+        <article class="panel glass-card github-panel" id="github">
           <div class="section-head">
             <div>
               <div class="eyebrow">GitHub</div>
-              <h3>提交记录绑定区</h3>
+              <h3>热力图与活跃记录</h3>
             </div>
           </div>
-          <p class="muted">
-            第一版先展示 GitHub 活跃热力图与绑定说明。后续可接入 GitHub API，统计提交数、仓库活跃度、近期项目更新。
-          </p>
-          <div class="github-card">
-            <img src="https://ghchart.rshah.org/409ba5/hanxing-go" alt="GitHub contribution chart">
+          <p class="muted">用 GitHub 热力图展示持续编码与学习痕迹，后续可继续接入仓库统计、最近提交与项目活跃度。</p>
+          <div class="github-card heatmap-card">
+            <img src="https://ghchart.rshah.org/409ba5/hanxing-go" alt="Hanxing GitHub contribution chart">
+          </div>
+          <div class="github-stats-row">
+            <img src="https://github-readme-stats.vercel.app/api?username=hanxing-go&show_icons=true&hide_title=true&theme=transparent&hide_border=true&text_color=14213d&icon_color=4f7cff" alt="Hanxing GitHub stats">
           </div>
           <div class="github-links">
             <a class="secondary-btn" href="https://github.com/hanxing-go" target="_blank" rel="noreferrer">查看 GitHub 主页</a>
-            <a class="ghost-link" href="#about">查看绑定建议</a>
+            <a class="ghost-link" href="https://github.com/hanxing-go/hanxing-go.github.io" target="_blank" rel="noreferrer">本站源码</a>
           </div>
         </article>
+      </section>
+
+      <section class="panel glass-card" id="projects">
+        <div class="section-head wrap">
+          <div>
+            <div class="eyebrow">Projects</div>
+            <h3>项目索引</h3>
+          </div>
+          <a class="ghost-link" href="https://github.com/hanxing-go?tab=repositories" target="_blank" rel="noreferrer">更多仓库 →</a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-meta">Personal Site</div>
+            <h4>hanxing-go.github.io</h4>
+            <p>个人主页与学习仪表盘，整合简介、GitHub 热力图、项目索引、技能展示和打卡路线。</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/hanxing-go/hanxing-go.github.io" target="_blank" rel="noreferrer">查看源码</a>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">Backend Practice</div>
+            <h4>Java 后端练习集</h4>
+            <p>用于沉淀 Spring、MySQL、接口设计、统一异常处理、日志与部署实践的后端项目索引。</p>
+            <div class="project-tags"><span>Java</span><span>Spring</span><span>MySQL</span></div>
+            <a href="https://github.com/hanxing-go?tab=repositories" target="_blank" rel="noreferrer">浏览仓库</a>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">Agent Lab</div>
+            <h4>Agent 应用实验室</h4>
+            <p>记录 Prompt、工具调用、RAG、自动化工作流等探索，逐步形成可展示的 AI 应用项目。</p>
+            <div class="project-tags"><span>Agent</span><span>Workflow</span><span>AI</span></div>
+            <a href="#roadmap">查看学习路线</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel glass-card" id="skills">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Skills</div>
+            <h3>技能展示</h3>
+          </div>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-card"><strong>Java</strong><span>集合 / 并发 / JVM / 工程基础</span></div>
+          <div class="skill-card"><strong>Spring</strong><span>IOC / AOP / Spring Boot / REST API</span></div>
+          <div class="skill-card"><strong>MySQL</strong><span>索引 / 事务 / SQL 优化 / 表设计</span></div>
+          <div class="skill-card"><strong>Docker</strong><span>容器化部署 / 镜像 / Compose</span></div>
+          <div class="skill-card"><strong>GitHub</strong><span>版本管理 / 项目文档 / 作品集维护</span></div>
+          <div class="skill-card"><strong>Agent</strong><span>Prompt / 工具调用 / 工作流 / RAG 入门</span></div>
+        </div>
       </section>
 
       <section class="panel glass-card" id="calendar">
@@ -156,26 +243,11 @@
             </div>
           </div>
           <form id="checkinForm" class="checkin-form">
-            <label>
-              <span>日期</span>
-              <input type="date" id="checkinDate">
-            </label>
-            <label>
-              <span>学习时长（小时）</span>
-              <input type="number" id="studyDuration" min="0" step="0.5" placeholder="例如 3">
-            </label>
-            <label>
-              <span>今日学习内容</span>
-              <textarea id="studyContent" rows="4" placeholder="今天学了什么？例如 Java 集合、Spring Boot、Agent 调研..."></textarea>
-            </label>
-            <label>
-              <span>今日总结</span>
-              <textarea id="dailySummary" rows="4" placeholder="记录今天的收获、问题和情绪状态"></textarea>
-            </label>
-            <label>
-              <span>明日计划</span>
-              <textarea id="tomorrowPlan" rows="3" placeholder="给明天一个清晰、可执行的小目标"></textarea>
-            </label>
+            <label><span>日期</span><input type="date" id="checkinDate"></label>
+            <label><span>学习时长（小时）</span><input type="number" id="studyDuration" min="0" step="0.5" placeholder="例如 3"></label>
+            <label><span>今日学习内容</span><textarea id="studyContent" rows="4" placeholder="今天学了什么？例如 Java 集合、Spring Boot、Agent 调研..."></textarea></label>
+            <label><span>今日总结</span><textarea id="dailySummary" rows="4" placeholder="记录今天的收获、问题和情绪状态"></textarea></label>
+            <label><span>明日计划</span><textarea id="tomorrowPlan" rows="3" placeholder="给明天一个清晰、可执行的小目标"></textarea></label>
             <div class="form-actions">
               <button type="submit" class="primary-btn">保存今日打卡</button>
               <button type="button" class="secondary-btn" id="fillTodayBtn">填入今日日期</button>
@@ -208,43 +280,9 @@
         <div class="roadmap-container" id="roadmapContainer"></div>
       </section>
 
-      <section class="future-grid">
-        <article class="panel glass-card" id="blog">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Future Blog</div>
-              <h3>后续博客扩展</h3>
-            </div>
-          </div>
-          <div class="future-list">
-            <div class="future-item">
-              <strong>文章系统</strong>
-              <p>支持学习笔记、复盘随笔、技术长文与标签分类。</p>
-            </div>
-            <div class="future-item">
-              <strong>项目展示</strong>
-              <p>展示 GitHub 仓库、项目亮点、技术栈与演示链接。</p>
-            </div>
-            <div class="future-item">
-              <strong>个人主页升级</strong>
-              <p>把学习记录、博客内容、项目经验整合到一个统一品牌页面。</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel glass-card" id="about">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">About</div>
-              <h3>个人主页说明</h3>
-            </div>
-          </div>
-          <div class="about-copy">
-            <p>这个网站的第一阶段，是一个能真实记录你学习过程的个人空间。</p>
-            <p>第二阶段，可以逐步加上文章详情页、项目页、标签系统、搜索、评论与 RSS。</p>
-            <p>GitHub 提交记录目前采用外部热力图方式嵌入；后续若要统计更完整数据，建议通过 GitHub API 或构建脚本定时同步。</p>
-          </div>
-        </article>
+      <section class="panel glass-card reference-note">
+        <div class="eyebrow">Reference</div>
+        <p>视觉与信息组织参考了 <a href="https://koharu.cosine.ren/" target="_blank" rel="noreferrer">Koharu</a> 的卡片式博客首页思路；其公开源码线索为 <a href="https://github.com/cosZone/astro-koharu" target="_blank" rel="noreferrer">cosZone/astro-koharu</a>。本站仅参考布局表达，不复制内容素材。</p>
       </section>
     </main>
   </div>

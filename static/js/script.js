@@ -168,11 +168,11 @@ const roadmapData = [
 const weeklyGoals = [
   '保持至少 5 天学习打卡',
   'LeetCode Hot100 完成 3 题',
-  '推进当前月路线至少 2 个周目标',
+  '推进 Spring / Docker / MySQL 实战复习',
   '整理 1 篇可沉淀为博客的笔记'
 ];
 
-const tags = ['Java 后端', 'Agent', 'LeetCode', 'Spring Boot', 'GitHub', '个人博客'];
+const tags = ['研一', 'Java 后端', 'Agent', 'Spring', 'Docker', 'MySQL', 'LeetCode', 'GitHub'];
 
 let currentCalendarDate = new Date();
 let roadmapView = 'month';
